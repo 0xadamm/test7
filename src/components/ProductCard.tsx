@@ -1,11 +1,12 @@
 import React from "react";
+import { Model } from "./Model";
 import ProductImage from "./ProductImage";
 
 const ProductCard = () => {
   return (
     <div className=" w-96  bg-slate-400 rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
       <div className="img_container">
-        <ProductImage />
+        <Model />
       </div>
       <div className="product_info p-5 rounded-xl">
         <h5 className="text-2xl font-bold">Product Name</h5>
