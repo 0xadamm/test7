@@ -1,5 +1,6 @@
 import React from "react";
 import ProductImage from "./ProductImage";
+
 const ProductCard = () => {
   return (
     <div className=" w-96  bg-slate-400 rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">

@@ -1,38 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Description
 
-## Getting Started
+We need to design a product card that features a 3D object and provides an interactive experience for the user. The design should include a hover effect that causes the object to rotate, allowing the viewer to see it from multiple angles.
 
-First, run the development server:
+# General Requirements
+
+- [Next.js w/ TypeScript](https://nextjs.org/docs/basic-features/typescript)
+- [Tailwind CSS](https://tailwindcss.com/docs/guides/nextjs)
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+
+# Reference Videos
+
+### [Loading GLTF Models](https://www.youtube.com/watch?v=ARW_EiH6HH0&t=1s)
+
+# Example Images
+
+## Desktop
+
+![desktop_image](public/readme/desktop_image.png)
+
+## Mobile
+
+![mobile_image](public/readme/mobile_image.png)
+
+# Instructions if needed
+
+# [Create Next App w/ TypeScript](https://nextjs.org/docs/getting-started)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+yarn create next-app my-project --typescript --eslint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# [Install Tailwind CSS](https://tailwindcss.com/docs/guides/nextjs)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn add -D tailwindcss postcss autoprefixer
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+yarn tailwindcss init -p
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Configure template path
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Add the paths to all of your template files in your tailwind.config.js file.
 
-## Learn More
+```javaScript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
 
-To learn more about Next.js, take a look at the following resources:
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Add the Tailwind directives to your CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Add the @tailwind directives for each Tailwind’s layers to your globals.css file.
 
-## Deploy on Vercel
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# [Install React Three Fiber & Drei](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+yarn add three @types/three @react-three/fiber
+```
+
+```bash
+yarn add @react-three/drei
+```
