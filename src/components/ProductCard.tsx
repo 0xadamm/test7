@@ -1,12 +1,17 @@
 import React from "react";
-import ProductImage from "./ProductImage";
-import { Model } from "./Model";
+import { Canvas } from "@react-three/fiber";
+import { Suzanne } from "./Suzanne";
+// Trying to load Suzanne model
 
 const ProductCard = () => {
   return (
     <div className=" w-96  bg-slate-400 rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <div className="img_container">
-        <Model />
+      <div className="img_container ">
+        <Canvas>
+          <ambientLight intensity={0.1} />
+          <directionalLight color="red" position={[0, 0, 2]} />
+          <Suzanne />
+        </Canvas>
       </div>
       <div className="product_info p-5 rounded-xl">
         <h5 className="text-2xl font-bold">Product Name</h5>
