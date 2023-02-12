@@ -1,27 +1,29 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { Suzanne } from "./Suzanne";
-// Trying to load Suzanne model
 
 const ProductCard = () => {
   return (
-    <div className=" bg-slate-400 rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <div className="img_container h-96">
-        <Canvas
-          className="rounded-t-xl"
-          onCreated={({ gl }) => {
-            gl.setClearColor("#D3D3D3");
-          }}>
-          <ambientLight intensity={0.1} />
-          <directionalLight color="white" position={[0, 0, 2]} />
-          <Suzanne />
-        </Canvas>
-      </div>
-      <div className="product_info p-5 rounded-xl">
-        <h5 className="text-2xl font-bold">Product Name</h5>
-        <p className="text-xs">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+    <div className="flex justify-center p-40">
+      <div className="product_card bg-gray-800  rounded-xl">
+        <div className="model_container h-96 ">
+          <Canvas
+            className="rounded-t-xl"
+            onCreated={({ gl }) => {
+              gl.setClearColor("#757575");
+            }}>
+            <ambientLight intensity={0.1} />
+            <directionalLight color="white" position={[0, 0, 2]} />
+            <Suzanne />
+          </Canvas>
+        </div>
+
+        <div className="product_info p-6">
+          <h5 className="text-2xl font-bold">Product Name</h5>
+          <p className="text-xs">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
       </div>
     </div>
   );
