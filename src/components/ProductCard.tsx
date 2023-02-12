@@ -5,9 +5,13 @@ import { Suzanne } from "./Suzanne";
 
 const ProductCard = () => {
   return (
-    <div className=" w-96  bg-slate-400 rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <div className="img_container ">
-        <Canvas>
+    <div className=" bg-slate-400 rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="img_container h-96">
+        <Canvas
+          className="rounded-t-xl"
+          onCreated={({ gl }) => {
+            gl.setClearColor("#D3D3D3");
+          }}>
           <ambientLight intensity={0.1} />
           <directionalLight color="white" position={[0, 0, 2]} />
           <Suzanne />
