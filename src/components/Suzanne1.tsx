@@ -2,7 +2,7 @@ import React, { Suspense, useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-export const Suzanne = () => {
+export const Suzanne1 = () => {
   const model = useLoader(GLTFLoader, "/models/suzanne.glb");
   const meshRef = useRef<THREE.Mesh>(null);
 
@@ -14,7 +14,7 @@ export const Suzanne = () => {
 
   return (
     <Suspense>
-      <primitive object={model.scene} scale={[2.2, 2.2, 2.2]} ref={meshRef} />;
+      <primitive object={model.scene} scale={[1.5, 1.5, 1.5]} ref={meshRef} />;
     </Suspense>
   );
 };
