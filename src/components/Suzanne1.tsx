@@ -14,7 +14,7 @@ export const Suzanne1 = () => {
 
   return (
     <Suspense>
-      <primitive object={model.scene} scale={[1.5, 1.5, 1.5]} ref={meshRef} />;
+      <primitive object={model.scene} scale={[2.2, 2.2, 2.2]} ref={meshRef} />;
     </Suspense>
   );
 };
