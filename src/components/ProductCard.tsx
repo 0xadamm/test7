@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { ModalData } from "./data";
 import { Modal } from "./Modal";
+import { ModalData } from "./data";
 
 const ProductCard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -9,7 +9,9 @@ const ProductCard = () => {
   const handleClose = () => setShowModal(false);
 
   return (
-    <div id="CardContainer" className="columns-1 space-y-8 pt-6">
+    <div
+      id="CardContainer"
+      className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 pt-6 ">
       {ModalData.map((item, id) => (
         <div
           id="ProductCard"
