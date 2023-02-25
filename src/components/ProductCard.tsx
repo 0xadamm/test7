@@ -4,10 +4,13 @@ import { ModalData } from "./data";
 
 const ProductCard = () => {
   return (
-    <div className="flex gap-10 justify p-10 ">
+    <div id="CardContainer" className="columns-1 space-y-8 pt-6">
       {ModalData.map((item, id) => (
-        <div className="product_card bg-gray-800  rounded-xl" key={id}>
-          <div className="model_container h-96 ">
+        <div
+          id="ProductCard"
+          className="w-96 bg-gray-800 rounded-xl mx-auto"
+          key={id}>
+          <div id="CanvasContainer" className=" h-96 ">
             <Canvas
               className="rounded-t-xl"
               onCreated={({ gl }) => {
@@ -19,7 +22,7 @@ const ProductCard = () => {
             </Canvas>
           </div>
 
-          <div className="product_info p-6">
+          <div id="ProuductInfo" className="p-6">
             <h5 className="text-2xl font-bold">Product Name</h5>
             <p className="text-xs">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
