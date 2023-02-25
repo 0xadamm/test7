@@ -23,7 +23,7 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
       {/* The components inside of the Modal are the Canvas & ItemDetails*/}
       <div
         id="ModalComponents"
-        className="h-screen sm:h-5/6 sm:w-5/6 sm:flex  sm:flex-col">
+        className="h-screen sm:h-5/6 sm:w-5/6 sm:flex sm:flex-col">
         <div
           id="CanvasContainer"
           className=" h-1/2 sm:h-2/3 bg-gray-800 sm:rounded-t-xl">
@@ -44,6 +44,7 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
           <p className="text-xs">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
+          <button className="bg-black px-6 py-4 mt-4 border-2  ">Close</button>
         </div>
       </div>
     </div>
