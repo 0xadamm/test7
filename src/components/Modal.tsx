@@ -8,8 +8,6 @@ type ModalProps = {
 };
 
 export const Modal = ({ visible, onClose }: ModalProps) => {
-  const canvasRef = useRef<HTMLDivElement>(null);
-
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     // Check if the target element is the ModalConatiner
     if ((e.target as HTMLDivElement).id === "ModalContainer") onClose(e);
@@ -21,8 +19,10 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
     <div
       id="ModalContainer"
       onClick={handleClick}
-      className="h-screen flex justify-center items-center bg-black bg-opacity-30 backdrop-blur-sm p-6 fixed inset-0 ">
-      <div className="h-5/6 w-4/5" ref={canvasRef}>
+      className="h-screen flex justify-center items-center bg-black bg-opacity-30 backdrop-blur-sm fixed inset-0 ">
+      <div
+        id="CanvasContainer"
+        className=" w-screen h-1/2    sm:h-5/6 sm:w-11/12">
         <Canvas
           className="rounded-xl"
           onCreated={({ gl }) => {

@@ -12,9 +12,10 @@ const ProductCard = () => {
     <div>
       <div className="CardContainer flex justify-center p-40">
         <div
+          id="ProductCard"
           onClick={() => setShowModal(true)}
-          className="ProductCard bg-gray-800  rounded-xl">
-          <div className="CanvasContainer h-96 ">
+          className="bg-gray-800 rounded-xl">
+          <div id="CanvasContainer" className="h-96">
             <Canvas
               className="rounded-t-xl"
               onCreated={({ gl }) => {
