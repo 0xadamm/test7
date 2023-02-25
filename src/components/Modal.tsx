@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Suzanne } from "@/components/Suzanne";
-import { MouseEventHandler, useRef } from "react";
+import { MouseEventHandler } from "react";
 
 type ModalProps = {
   visible: boolean;
