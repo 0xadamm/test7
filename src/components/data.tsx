@@ -1,6 +1,12 @@
 import { Suzanne } from "./Suzanne";
 
-export const ModalData = [
+interface ModalDataItem {
+  Image: JSX.Element;
+  Title: string;
+  Body: string;
+}
+
+export const ModalData: ModalDataItem[] = [
   {
     Image: <Suzanne />,
     Title: "Product Name",
