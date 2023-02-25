@@ -10,11 +10,11 @@ const ProductCard = () => {
 
   return (
     <div>
-      <div className="CardContainer flex justify-center p-40">
+      <div id="CardContainer" className="columns-1 space-y-8 pt-6">
         <div
           id="ProductCard"
           onClick={() => setShowModal(true)}
-          className="bg-gray-800 rounded-xl">
+          className="w-96 bg-gray-800 rounded-xl mx-auto">
           <div id="CanvasContainer" className="h-96">
             <Canvas
               className="rounded-t-xl"
@@ -27,7 +27,7 @@ const ProductCard = () => {
             </Canvas>
           </div>
 
-          <div className="product_info p-6">
+          <div id="ProuductInfo" className="p-6">
             <h5 className="text-2xl font-bold">Product Name</h5>
             <p className="text-xs">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
