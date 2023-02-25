@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Suzanne } from "./Suzanne";
+import { ModalData } from "./data";
 import { Modal } from "./Modal";
 
 const ProductCard = () => {
@@ -9,21 +9,22 @@ const ProductCard = () => {
   const handleClose = () => setShowModal(false);
 
   return (
-    <div>
-      <div id="CardContainer" className="columns-1 space-y-8 pt-6">
+    <div id="CardContainer" className="columns-1 space-y-8 pt-6">
+      {ModalData.map((item, id) => (
         <div
           id="ProductCard"
           onClick={() => setShowModal(true)}
-          className="w-96 bg-gray-800 rounded-xl mx-auto">
-          <div id="CanvasContainer" className="h-96">
+          className="w-96 bg-gray-800 rounded-xl mx-auto"
+          key={id}>
+          <div id="CanvasContainer" className=" h-96 ">
             <Canvas
               className="rounded-t-xl"
               onCreated={({ gl }) => {
                 gl.setClearColor("#757575");
               }}>
               <ambientLight intensity={0.1} />
-              <directionalLight color="white" position={[0, 0, 2]} />
-              <Suzanne />
+              <directionalLight color="white" position={[0, 0, 1]} />
+              {item.Image}
             </Canvas>
           </div>
 
@@ -34,7 +35,7 @@ const ProductCard = () => {
             </p>
           </div>
         </div>
-      </div>
+      ))}
       <Modal onClose={handleClose} visible={showModal} />
     </div>
   );

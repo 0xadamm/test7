@@ -20,9 +20,7 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
       id="ModalContainer"
       onClick={handleClick}
       className="h-screen flex justify-center items-center bg-black bg-opacity-30 backdrop-blur-sm fixed inset-0 ">
-      <div
-        id="CanvasContainer"
-        className=" w-screen h-1/2    sm:h-5/6 sm:w-11/12">
+      <div id="CanvasContainer" className=" w-screen h-1/2 sm:h-5/6 sm:w-11/12">
         <Canvas
           className="rounded-xl"
           onCreated={({ gl }) => {
