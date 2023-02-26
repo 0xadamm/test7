@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Suzanne } from "@/components/Suzanne";
+import { Model } from "@/components/Model";
 import { MouseEventHandler } from "react";
 
 type ModalProps = {
@@ -53,12 +53,12 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
             }}>
             <ambientLight intensity={0.1} />
             <directionalLight color="white" position={[0, 0, 2]} />
-            <Suzanne />
+            <Model />
           </Canvas>
         </div>
         <div
           id="DetailContainer"
-          className="h-1/2 sm:h-1/4 sm:rounded-b-xl bg-gray-800 flex flex-col space-y-64">
+          className="h-1/2 sm:h-1/4 sm:rounded-b-xl bg-gray-800 flex flex-col space-y-64 sm:space-y-10">
           <div id="Details">
             <h5 className="text-2xl font-bold">Product Name</h5>
             <p className="text-xs">

@@ -3,7 +3,7 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Clone } from "@react-three/drei";
 
-export const Suzanne = () => {
+export const Model = () => {
   const model = useLoader(GLTFLoader, "/models/suzanne.glb");
   const meshRef = useRef<THREE.Group>(null);
 

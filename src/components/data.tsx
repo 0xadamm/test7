@@ -1,4 +1,4 @@
-import { Suzanne } from "./Suzanne";
+import { Model } from "./Model";
 
 interface ModalDataItem {
   Image: JSX.Element;
@@ -8,27 +8,27 @@ interface ModalDataItem {
 
 export const ModalData: ModalDataItem[] = [
   {
-    Image: <Suzanne />,
+    Image: <Model />,
     Title: "Product Name",
     Body: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
-    Image: <Suzanne />,
+    Image: <Model />,
     Title: "Product Name",
     Body: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
-    Image: <Suzanne />,
+    Image: <Model />,
     Title: "Product Name",
     Body: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
-    Image: <Suzanne />,
+    Image: <Model />,
     Title: "Product Name",
     Body: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
-    Image: <Suzanne />,
+    Image: <Model />,
     Title: "Product Name",
     Body: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
