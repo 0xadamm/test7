@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Model } from "@/components/Model";
 import { MouseEventHandler } from "react";
+import { motion } from "framer-motion";
 
 type ModalProps = {
   visible: boolean;
@@ -15,20 +16,27 @@ type ButtonProps = {
 
 const Button = ({ onClick, id, label }: ButtonProps) => {
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.1 }}
       id={id}
       onClick={onClick}
       className="bg-black px-6 py-4 w-1/2 m-4 border-2 rounded-lg">
       {label}
-    </button>
+    </motion.button>
   );
 };
 
 export const Modal = ({ visible, onClose }: ModalProps) => {
   const handleClose = (e: React.MouseEvent<HTMLElement>) => {
-    const targetId = (e.target as HTMLDivElement).id;
+    const targetId = (e.target as HTMLElement).id;
     if (targetId === "ModalContainer" || targetId === "CloseButton") {
       onClose(e);
+    }
+  };
+
+  const handleDragClose = (event: any, info: any) => {
+    if (info.offset.y > 100) {
+      onClose(event);
     }
   };
 
@@ -56,7 +64,9 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
             <Model />
           </Canvas>
         </div>
-        <div
+        <motion.div
+          drag="y"
+          onDrag={handleDragClose}
           id="DetailContainer"
           className="h-1/2 sm:h-1/4 sm:rounded-b-xl bg-gray-800 flex flex-col space-y-64 sm:space-y-10">
           <div id="Details">
@@ -74,7 +84,7 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
               label="Download"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
