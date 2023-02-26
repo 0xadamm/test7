@@ -35,7 +35,7 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
   };
 
   const handleDragClose = (event: any, info: any) => {
-    if (info.offset.y > 100) {
+    if (info.offset.y > 50) {
       onClose(event);
     }
   };
