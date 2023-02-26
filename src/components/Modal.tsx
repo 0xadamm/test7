@@ -4,13 +4,32 @@ import { MouseEventHandler } from "react";
 
 type ModalProps = {
   visible: boolean;
-  onClose: MouseEventHandler<HTMLDivElement>;
+  onClose: MouseEventHandler<HTMLElement>;
+};
+
+type ButtonProps = {
+  onClick: MouseEventHandler<HTMLElement>;
+  id: string;
+  label: string;
+};
+
+const Button = ({ onClick, id, label }: ButtonProps) => {
+  return (
+    <button
+      id={id}
+      onClick={onClick}
+      className="bg-black px-6 py-4 w-1/2 m-4 border-2 rounded-lg">
+      {label}
+    </button>
+  );
 };
 
 export const Modal = ({ visible, onClose }: ModalProps) => {
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Check if the target element is the ModalConatiner
-    if ((e.target as HTMLDivElement).id === "ModalContainer") onClose(e);
+  const handleClose = (e: React.MouseEvent<HTMLElement>) => {
+    const targetId = (e.target as HTMLDivElement).id;
+    if (targetId === "ModalContainer" || targetId === "CloseButton") {
+      onClose(e);
+    }
   };
 
   if (!visible) return null;
@@ -18,15 +37,15 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
   return (
     <div
       id="ModalContainer"
-      onClick={handleClick}
+      onClick={handleClose}
       className="bg-black bg-opacity-30 backdrop-blur-sm h-screen fixed inset-0 sm:flex sm:justify-center sm:items-center">
       {/* The components inside of the Modal are the Canvas & ItemDetails*/}
       <div
         id="ModalComponents"
-        className="h-screen sm:h-5/6 sm:w-5/6 sm:flex sm:flex-col">
+        className="h-screen sm:h-5/6 sm:w-2/3 sm:flex sm:flex-col">
         <div
           id="CanvasContainer"
-          className=" h-1/2 sm:h-2/3 bg-gray-800 sm:rounded-t-xl">
+          className=" h-1/2 sm:h-3/4 bg-gray-800 sm:rounded-t-xl">
           <Canvas
             className="rounded-b-xl sm:rounded-xl"
             onCreated={({ gl }) => {
@@ -38,13 +57,23 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
           </Canvas>
         </div>
         <div
-          id="ItemDetails"
-          className="h-1/2 sm:h-1/3 sm:rounded-b-xl bg-gray-800">
-          <h5 className="text-2xl font-bold">Product Name</h5>
-          <p className="text-xs">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-          <button className="bg-black px-6 py-4 mt-4 border-2  ">Close</button>
+          id="DetailContainer"
+          className="h-1/2 sm:h-1/4 sm:rounded-b-xl bg-gray-800 flex flex-col space-y-64">
+          <div id="Details">
+            <h5 className="text-2xl font-bold">Product Name</h5>
+            <p className="text-xs">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+
+          <div id="ButtonContainer" className="flex">
+            <Button id="CloseButton" onClick={handleClose} label="Close" />
+            <Button
+              id="DownloadButton"
+              onClick={() => alert("Download clicked!")}
+              label="Download"
+            />
+          </div>
         </div>
       </div>
     </div>
