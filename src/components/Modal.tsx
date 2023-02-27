@@ -20,7 +20,8 @@ const Button = ({ onClick, id, label }: ButtonProps) => {
       whileHover={{ scale: 1.1 }}
       id={id}
       onClick={onClick}
-      className="bg-black px-6 py-4 w-1/2 m-4 border-2 rounded-lg">
+      className="bg-black px-6 py-4 w-1/2 m-4 border-2 rounded-lg"
+    >
       {label}
     </motion.button>
   );
@@ -46,19 +47,23 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
     <div
       id="ModalContainer"
       onClick={handleClose}
-      className="bg-black bg-opacity-30 backdrop-blur-sm h-screen fixed inset-0 sm:flex sm:justify-center sm:items-center">
+      className="bg-black bg-opacity-30 backdrop-blur-sm h-screen fixed inset-0 sm:flex sm:justify-center sm:items-center"
+    >
       {/* The components inside of the Modal are the Canvas & ItemDetails*/}
       <div
         id="ModalComponents"
-        className="h-screen sm:h-5/6 sm:w-2/3 sm:flex sm:flex-col">
+        className="h-screen sm:h-5/6 sm:w-2/3 sm:flex sm:flex-col"
+      >
         <div
           id="CanvasContainer"
-          className=" h-1/2 sm:h-3/4 bg-gray-800 sm:rounded-t-xl">
+          className=" h-1/2 sm:h-3/4 bg-gray-800 sm:rounded-t-xl"
+        >
           <Canvas
             className="rounded-b-xl sm:rounded-xl"
             onCreated={({ gl }) => {
               gl.setClearColor("#757575");
-            }}>
+            }}
+          >
             <ambientLight intensity={0.1} />
             <directionalLight color="white" position={[0, 0, 2]} />
             <Model />
@@ -68,7 +73,8 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
           drag="y"
           onDrag={handleDragClose}
           id="DetailContainer"
-          className="h-1/2 sm:h-1/4 sm:rounded-b-xl bg-gray-800 flex flex-col space-y-64 sm:space-y-10">
+          className="h-1/2 sm:h-1/4 sm:rounded-b-xl bg-gray-800 flex flex-col space-y-48 sm:space-y-10"
+        >
           <div id="Details">
             <h5 className="text-2xl font-bold">Product Name</h5>
             <p className="text-xs">
