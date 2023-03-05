@@ -46,7 +46,7 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
     <div
       id="ModalContainer"
       onClick={handleClose}
-      className="bg-black bg-opacity-30 backdrop-blur-sm h-screen fixed inset-0 sm:flex sm:justify-center sm:items-center">
+      className="bg-black bg-opacity-30 mt-[6vh] sm:mt-0 backdrop-blur-sm h-screen fixed inset-0 sm:flex sm:justify-center sm:items-center">
       {/* The components inside of the Modal are the Canvas & ItemDetails*/}
       <div
         id="ModalComponents"
@@ -68,7 +68,7 @@ export const Modal = ({ visible, onClose }: ModalProps) => {
           drag="y"
           onDrag={handleDragClose}
           id="DetailContainer"
-          className="h-1/2 sm:h-1/4 sm:rounded-b-xl bg-gray-800 flex flex-col space-y-64 sm:space-y-10">
+          className="h-1/2 sm:h-1/4 sm:rounded-b-xl bg-gray-800 flex flex-col space-y-48 sm:space-y-10">
           <div id="Details">
             <h5 className="text-2xl font-bold">Product Name</h5>
             <p className="text-xs">

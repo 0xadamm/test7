@@ -11,7 +11,7 @@ const ProductCard = () => {
   return (
     <div
       id="CardContainer"
-      className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 pt-6 ">
+      className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 pt-[7vh] ">
       {ModalData.map((item, id) => (
         <div
           id="ProductCard"
