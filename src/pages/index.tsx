@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
-import NewNav from "@/components/NewNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
