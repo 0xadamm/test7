@@ -2,8 +2,8 @@ import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
-import { Modal } from "@/components/Modal";
-import { useState } from "react";
+import NewNav from "@/components/NewNav";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
